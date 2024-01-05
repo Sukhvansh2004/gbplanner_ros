@@ -1,10 +1,11 @@
 run_mode: kSim
-trigger_mode: kManual
+trigger_mode: kAuto
 robot_type: kGround
-output_type: kAction
+output_type: kTopic
+world_frame_id: odom
 init_motion_enable: false
 planner_trigger_lead_time: 0.0
-smooth_heading_enable: true
+smooth_heading_enable: false
 init_motion:
   z_takeoff: 2.5
   z_drop: 1.7

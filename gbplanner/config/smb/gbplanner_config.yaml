@@ -14,9 +14,10 @@ RobotParams:
 #             all follows ROS convention (X-forward, Y-left, Z-Up).
 #-------------------------------------------------------------------------------
 SensorParams:
-  sensor_list:      ["VLP16"]
-  VLP16:
-    type:           kLidar
+  sensor_list:      ["D435i"]
+  D435i:
+    type:           kCamera
+    CameraType:      kFixed
     max_range:      20.0
     center_offset:  [0.0, 0.0, 0.0]
     rotations:      [0.0, 0.0, 0.0]
@@ -108,10 +109,10 @@ RandomSamplerParams:
 # exp_sensor_list: sensors used to compute exploration gain.
 #-------------------------------------------------------------------------------
 PlanningParams:
-  type:             kAdaptiveExploration # Options: kBasicExploration, kAdaptiveExploration
+  type:             kBasicExploration # Options: kBasicExploration, kAdaptiveExploration
   rr_mode:          kGraph
   bound_mode:       kExtremeBound
-  exp_sensor_list:  ["VLP16"]
+  exp_sensor_list:  ["D435i"]
   no_gain_zones_list: ["g1"]
   edge_length_min:  0.1
   edge_length_max:  3.0
@@ -158,10 +159,10 @@ PlanningParams:
   homing_backward: false
   auto_homing_enable: true
   time_budget_limit: 3600 # seconds
-  global_frame_id: world
+  global_frame_id: odom
   global_path_inclination_check: true
   go_home_if_fully_explored: true
-  geofence_checking_enable: true
+  geofence_checking_enable: false
 
 AdaptiveObbParams:
   type: kPca

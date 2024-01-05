@@ -9,8 +9,8 @@ namespace explorer {
 
 enum Verbosity { SILENT = 0, PLANNER_STATUS = 1, ERROR = 2, WARN = 3, INFO = 4, DEBUG = 5 };
 
-#define global_verbosity Verbosity::ERROR
-#define param_verbosity Verbosity::SILENT
+#define global_verbosity Verbosity::DEBUG
+#define param_verbosity Verbosity::DEBUG
 class PCIManager {
  public:
   PCIManager(const ros::NodeHandle& nh, const ros::NodeHandle& nh_private)
