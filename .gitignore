@@ -51,3 +51,4 @@ qtcreator-*
 CATKIN_IGNORE
 
 .vscode/
+catkin_simple/test/scenarios/hello_world/catkin_simple
